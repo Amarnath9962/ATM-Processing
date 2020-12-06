@@ -1,8 +1,5 @@
 import time
-import numpy
-
 print('Welcome to the Login Page')
-
 import sqlite3
 file = sqlite3.connect('Bank_Project.db')
 cur = file.cursor()
@@ -55,7 +52,6 @@ try:
                 print()
                 Option = int(input("Choose your choice : "))
 
-
                 if Option == 1:
                     def Balance():
                         Amount = cur.execute("select Username,Pin,Total_Amount from Bank_records")
@@ -66,9 +62,6 @@ try:
                     Balance()
                     restart = input('Do want Continue or Exit :')
                     print();print();print()
-
-
-
 
                 if Option == 2:
                     Amount = int(input('Please enter the Amount :'))
@@ -94,9 +87,6 @@ try:
                     restart = input('Do want continue or Exit :')
                     print();print()
 
-
-
-
                 if Option == 3:
                     Old = int(input('Please enter the Old pin Number : '))
                     if Old == pin:
@@ -114,7 +104,6 @@ try:
                             print('You New pin is doesn\'t match ')
                     restart = input('Do want continue or Exit :');
                     print();print()
-
 
                 if Option == 4:
                     Pin = int(input('Please confirm the Pin Number :'));
@@ -135,12 +124,6 @@ try:
                     restart = input('Do want continue or Exit :')
                     print()
 
-
-
-
-
-
-
     else:
         print("Please wait...!!!!")
         time.sleep(5)
@@ -150,6 +133,6 @@ try:
 
 
 except Exception as As:
-        print("These no records on this Username and Password")
+        print("There is no Records on this Username and Password")
 file.close()
             
